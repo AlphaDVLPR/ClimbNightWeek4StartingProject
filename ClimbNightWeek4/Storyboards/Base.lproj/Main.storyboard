@@ -67,33 +67,28 @@
                                 <rect key="frame" x="0.0" y="289" width="414" height="607"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="142" id="Xfz-Zc-pgv" customClass="JRC_JokeTableViewCell" customModule="ClimbNightWeek4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jokeCell" rowHeight="142" id="Xfz-Zc-pgv" customClass="JRC_JokeTableViewCell" customModule="ClimbNightWeek4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xfz-Zc-pgv" id="ggh-73-nh8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Joke)" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT4-cn-CMt">
-                                                    <rect key="frame" x="20" y="11" width="374" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Joke)" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT4-cn-CMt">
+                                                    <rect key="frame" x="20" y="11" width="374" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Category)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-hy-TnR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Category)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-hy-TnR">
                                                     <rect key="frame" x="20" y="108.5" width="83" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lT4-cn-CMt" firstAttribute="trailing" secondItem="ggh-73-nh8" secondAttribute="trailingMargin" id="Lk4-YK-TsH"/>
-                                                <constraint firstItem="lT4-cn-CMt" firstAttribute="top" secondItem="ggh-73-nh8" secondAttribute="topMargin" id="Wv3-dH-dK6"/>
-                                                <constraint firstItem="lT4-cn-CMt" firstAttribute="leading" secondItem="ggh-73-nh8" secondAttribute="leadingMargin" id="dkw-kh-ikz"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="dZg-hy-TnR" secondAttribute="bottom" constant="2" id="g3T-Tu-UoG"/>
-                                                <constraint firstItem="dZg-hy-TnR" firstAttribute="leading" secondItem="ggh-73-nh8" secondAttribute="leadingMargin" id="jFj-pt-pR9"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="categoryLabel" destination="dZg-hy-TnR" id="Qx0-AY-7rO"/>
@@ -118,6 +113,7 @@
                     <connections>
                         <outlet property="firstNameTextField" destination="ZcX-T7-DGM" id="PQG-e7-eXS"/>
                         <outlet property="getJokesButton" destination="JQc-XJ-n8I" id="Vxh-12-49T"/>
+                        <outlet property="jokesTableView" destination="6WJ-4Q-RLb" id="mr9-6d-n97"/>
                         <outlet property="lastNameTextField" destination="bkL-3M-InP" id="Ze3-XU-Xv0"/>
                         <outlet property="numberOfJokesLabel" destination="21Q-1G-ed8" id="Wof-qP-UZh"/>
                         <outlet property="numberOfJokesSlider" destination="kmI-DC-OUy" id="juo-u4-7MN"/>

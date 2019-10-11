@@ -24,7 +24,6 @@ class JRC_JokeTableViewCell: UITableViewCell {
     //MARK: - Functions
     func updateViewsForJoke() {
         guard let joke = joke else {return}
-        
         jokeLabel.text = joke.joke
         
         var combinedCategoriesString: String = ""

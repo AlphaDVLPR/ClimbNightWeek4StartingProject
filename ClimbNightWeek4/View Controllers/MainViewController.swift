@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Outlets
-    
+    @IBOutlet weak var jokesTableView: UITableView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var numberOfJokesLabel: UILabel!
@@ -20,11 +20,16 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     var numberOfJokes: Int = 50
+    var jokes: [JRC_Joke] = []
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.jokesTableView.rowHeight = 142
+        self.jokesTableView.estimatedRowHeight = 142
+        jokesTableView.delegate = self
+        jokesTableView.dataSource = self
         updateViews()
     }
     
@@ -41,15 +46,17 @@ class MainViewController: UIViewController {
             let lastNameText = lastNameTextField.text, lastNameText.isEmpty == false else {return}
         
         JRC_JokeNetworkCalls.fetchJoke(withFirstName: firstNameTextField.text, lastName: lastNameTextField.text, numberOfJokes: numberOfJokes) { (jokes) in
-            
-            if let jokes = jokes {
-                print("We got jokes")
-            } else {
-                print("We got problems")
+            DispatchQueue.main.async {
+                if let jokes = jokes {
+                    self.jokes = jokes
+                    self.jokesTableView.reloadData()
+                } else {
+                    print("We got problems")
+                }
             }
         }
     }
-
+    
     // MARK: - Custom Functions
     
     func updateViews() {
@@ -57,4 +64,20 @@ class MainViewController: UIViewController {
         
         numberOfJokesLabel.text = String(numberOfJokes)
     }
+}
+
+extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jokes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "jokeCell", for: indexPath) as? JRC_JokeTableViewCell else {return UITableViewCell()}
+        
+        cell.joke = jokes[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }
