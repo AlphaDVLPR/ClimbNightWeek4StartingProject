@@ -11,6 +11,8 @@
 
 @interface JRC_JokeNetworkCalls : NSObject
 
++ (void)fetchJokeWithFirstName:(NSString *)firstName lastName:(NSString *)lastName numberOfJokes:(NSInteger)numberOfJokes completion:(void (^) (NSArray<JRC_Joke *> *))completion;
+
 
 
 @end
