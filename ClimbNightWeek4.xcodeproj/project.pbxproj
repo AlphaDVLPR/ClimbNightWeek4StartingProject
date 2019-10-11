@@ -16,6 +16,7 @@
 		8685D721234F9629008BEC37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685D720234F9629008BEC37 /* MainViewController.swift */; };
 		E8FA97A7234FF8AA00CF567B /* JRC_Joke.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA97A6234FF8AA00CF567B /* JRC_Joke.m */; };
 		E8FA97AA234FFD4800CF567B /* JRC_JokeNetworkCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA97A9234FFD4800CF567B /* JRC_JokeNetworkCalls.m */; };
+		E8FA97AF2350147400CF567B /* JRC_JokeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA97AE2350147400CF567B /* JRC_JokeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E8FA97A6234FF8AA00CF567B /* JRC_Joke.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRC_Joke.m; sourceTree = "<group>"; };
 		E8FA97A8234FFD4800CF567B /* JRC_JokeNetworkCalls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRC_JokeNetworkCalls.h; sourceTree = "<group>"; };
 		E8FA97A9234FFD4800CF567B /* JRC_JokeNetworkCalls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRC_JokeNetworkCalls.m; sourceTree = "<group>"; };
+		E8FA97AE2350147400CF567B /* JRC_JokeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRC_JokeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				8685D720234F9629008BEC37 /* MainViewController.swift */,
+				E8FA97AE2350147400CF567B /* JRC_JokeTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				E8FA97AA234FFD4800CF567B /* JRC_JokeNetworkCalls.m in Sources */,
 				8685D716234F95BF008BEC37 /* main.m in Sources */,
 				8685D708234F95BE008BEC37 /* SceneDelegate.m in Sources */,
+				E8FA97AF2350147400CF567B /* JRC_JokeTableViewCell.swift in Sources */,
 				E8FA97A7234FF8AA00CF567B /* JRC_Joke.m in Sources */,
 				8685D721234F9629008BEC37 /* MainViewController.swift in Sources */,
 			);
